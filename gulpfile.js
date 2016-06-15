@@ -10,8 +10,8 @@ var clean = require("gulp-clean");
 var ts = require("gulp-typescript");
 var debug = require('gulp-debug');
 
-// Override this to have it named something different
-var OUTPUT_FILE_NAME = "site";
+// Set the global.Filename to override this
+var OUTPUT_FILE_NAME = global.FileName || "site";
 
 gulp.task("clean", ["clean:app", "clean:js", "clean:css"]);
 
