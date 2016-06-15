@@ -1,0 +1,15 @@
+{
+  "name": "gulp-web",
+  "description" : "Gulp file to assist in the building of iUS projects for .NET Core",
+  "repository" : {
+  	"type" : "git",
+  	"url" : "git://github.com/ius-gov/gulp-web.git"
+  },
+  "license" : "Apache-2.0",
+  "version": "0.0.1",
+  "dependencies": {
+    "gulp": "^3.8.11",
+    "gulp-json-editor": "^2.2.1",
+    "gutil": "^1.6.4"
+  }
+}
