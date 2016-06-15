@@ -1,15 +1,23 @@
 {
   "name": "gulp-benefits-web",
-  "description" : "Gulp file to assist in the building of iUS Benefits projects for .NET Core",
-  "repository" : {
-  	"type" : "git",
-  	"url" : "git://github.com/ius-gov/gulp-web.git"
+  "description": "Gulp file to assist in the building of iUS Benefits projects for .NET Core",
+  "repository": {
+    "type": "git",
+    "url": "git://github.com/ius-gov/gulp-web.git"
   },
-  "license" : "Apache-2.0",
+  "license": "Apache-2.0",
   "version": "1.0.1",
   "dependencies": {
-    "gulp": "^3.8.11",
+    "gulp": "^3.9.1",
+    "gulp-bower": "0.0.13",
+    "gulp-clean": "^0.3.2",
+    "gulp-concat": "^2.6.0",
+    "gulp-debug": "^2.1.2",
     "gulp-json-editor": "^2.2.1",
+    "gulp-rename": "^1.2.2",
+    "gulp-sass": "^2.3.2",
+    "gulp-typescript": "^2.13.6",
+    "gulp-uglify": "^1.5.3",
     "gutil": "^1.6.4"
   }
 }
