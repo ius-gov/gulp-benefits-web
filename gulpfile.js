@@ -13,7 +13,7 @@ var debug = require('gulp-debug');
 // Set the global.Filename to override this
 var OUTPUT_FILE_NAME = global.FileName || "site";
 
-var BOWER_COMPONENTS = global.BwerComponents || "wwwroot/lib";
+var BOWER_COMPONENTS = global.BowerComponents || "wwwroot/lib";
 
 gulp.task("clean", ["clean:app", "clean:js", "clean:css"]);
 
@@ -113,7 +113,7 @@ gulp.task('typescript:benefits', function () {
 });
 
 gulp.task('appsettings', function() {
-        return gulp.src(["./wwwroot/lib/BenefitsAppSettings/*.json"])
+        return gulp.src(['./' + BOWER_COMPONENTS + '/Benefits.AppSettings/*.json'])
             .pipe(debug())
             .pipe(gulp.dest('./Configuration/'));
 });
