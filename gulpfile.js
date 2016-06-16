@@ -13,6 +13,8 @@ var debug = require('gulp-debug');
 // Set the global.Filename to override this
 var OUTPUT_FILE_NAME = global.FileName || "site";
 
+var BOWER_COMPONENTS = global.BwerComponents || "wwwroot/lib";
+
 gulp.task("clean", ["clean:app", "clean:js", "clean:css"]);
 
 gulp.task('clean:app', function () {
@@ -31,7 +33,7 @@ gulp.task("clean:css", function () {
 });
 
 gulp.task("clean:bower", function () {
-    return gulp.src('./wwwroot/lib')
+    return gulp.src('./' + BOWER_COMPONENTS + '')
         .pipe(clean());
 });
 
@@ -40,13 +42,13 @@ gulp.task("concat", ["concat:js", "concat:css"]);
 
 gulp.task('concat:js', ['typescript'], function () {
     return gulp.src([
-            './wwwroot/lib/jquery/dist/jquery.js',
-            './wwwroot/lib/jquery-ui/jquery-ui.js',
-            './wwwroot/lib/jquery-validation/dist/jquery.validate.js',
-            './wwwroot/lib/jquery-validation/dist/additional-methods.js',
-            './wwwroot/lib/jquery-validation-unobtrusive/jquery.validate.unobtrusive.js',
-            './wwwroot/lib/datatables/media/js/dataTables.js',
-            './wwwroot/lib/system.js/dist/system.js',
+            './' + BOWER_COMPONENTS + '/jquery/dist/jquery.js',
+            './' + BOWER_COMPONENTS + '/jquery-ui/jquery-ui.js',
+            './' + BOWER_COMPONENTS + '/jquery-validation/dist/jquery.validate.js',
+            './' + BOWER_COMPONENTS + '/jquery-validation/dist/additional-methods.js',
+            './' + BOWER_COMPONENTS + '/jquery-validation-unobtrusive/jquery.validate.unobtrusive.js',
+            './' + BOWER_COMPONENTS + '/datatables/media/js/dataTables.js',
+            './' + BOWER_COMPONENTS + '/system.js/dist/system.js',
             './wwwroot/app/iUS.UX/*.js'
     ])
     .pipe(debug())
@@ -56,11 +58,11 @@ gulp.task('concat:js', ['typescript'], function () {
 
 gulp.task('concat:css', ['sass'], function () {
     return gulp.src([
-            './wwwroot/lib/pure/pure.css',
-            './wwwroot/lib/pure/grids-responsive.css',
-            './wwwroot/lib/iUS.UX/fonts/icomoon/style.css',
-            './wwwroot/lib/iUS.UX/css/external/jquery-ui.css',
-            './wwwroot/lib/iUS.UX/css/external/jquery-ui.theme.css',
+            './' + BOWER_COMPONENTS + '/pure/pure.css',
+            './' + BOWER_COMPONENTS + '/pure/grids-responsive.css',
+            './' + BOWER_COMPONENTS + '/iUS.UX/fonts/icomoon/style.css',
+            './' + BOWER_COMPONENTS + '/iUS.UX/css/external/jquery-ui.css',
+            './' + BOWER_COMPONENTS + '/iUS.UX/css/external/jquery-ui.theme.css',
             './wwwroot/app/css/ius.css',
             './wwwroot/app/css/benefits.css'
     ])
@@ -79,14 +81,14 @@ gulp.task('uglify:js', ['concat:js'], function () {
 gulp.task('sass', ['sass:benefits', 'sass:ius']);
 
 gulp.task('sass:benefits', function () {
-    return gulp.src('./wwwroot/lib/Benefits.UX/css/site.scss')
+    return gulp.src('./' + BOWER_COMPONENTS + '/Benefits.UX/css/site.scss')
         .pipe(sass())
         .pipe(rename("benefits.css"))
         .pipe(gulp.dest('./wwwroot/app/css'));
 });
 
 gulp.task('sass:ius', function () {
-    return gulp.src('./wwwroot/lib/iUs.UX/scss/ius.scss')
+    return gulp.src('./' + BOWER_COMPONENTS + '/iUs.UX/scss/ius.scss')
         .pipe(sass())
         .pipe(rename("ius.css"))
         .pipe(gulp.dest('./wwwroot/app/css'));
@@ -95,7 +97,7 @@ gulp.task('sass:ius', function () {
 gulp.task('typescript', ['typescript:ius', 'typescript:benefits']);
 
 gulp.task('typescript:ius', function () {
-    return gulp.src(['./wwwroot/lib/iUS.UX/typescript/**/*.ts'])
+    return gulp.src(['./' + BOWER_COMPONENTS + '/iUS.UX/typescript/**/*.ts'])
         .pipe(ts({
             noExternalResolve: false
         }))
@@ -103,7 +105,7 @@ gulp.task('typescript:ius', function () {
 });
 
 gulp.task('typescript:benefits', function () {
-    return gulp.src(['./wwwroot/lib/Benefits.UX/js/**/*.ts'])
+    return gulp.src(['./' + BOWER_COMPONENTS + '/Benefits.UX/js/**/*.ts'])
         .pipe(ts({
             noExternalResolve: false
         }))
