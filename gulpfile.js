@@ -112,6 +112,16 @@ gulp.task('typescript:benefits', function () {
         .pipe(gulp.dest('./wwwroot/app/Benefits.UX'));
 });
 
+gulp.task('copyfonts', function () {
+    return gulp.src(['./wwwroot/lib/iUS.UX/fonts/icomoon/fonts/*'])
+      .pipe(gulp.dest('./wwwroot/css/fonts/'));
+});
+
+gulp.task('copyimages', function () {
+    return gulp.src(['./wwwroot/lib/iUS.UX/images/*'])
+      .pipe(gulp.dest('./wwwroot/images/'));
+});
+
 gulp.task('appsettings', function() {
         return gulp.src(['./' + BOWER_COMPONENTS + '/Benefits.AppSettings/*.json'])
             .pipe(debug())
@@ -127,4 +137,4 @@ gulp.task('bower', function () {
     return bower();
 });
 
-gulp.task("build", ['sass', 'typescript', 'concat', 'uglify:js']);
+gulp.task("build", ['sass', 'typescript', 'concat', 'uglify:js','copyfonts', 'copyimages']);
