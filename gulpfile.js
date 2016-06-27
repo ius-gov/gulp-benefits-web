@@ -123,7 +123,7 @@ gulp.task('copyimages', function () {
 });
 
 gulp.task('appsettings', function() {
-        return gulp.src(['./' + BOWER_COMPONENTS + '/Benefits.AppSettings/*.json'])
+        return gulp.src(['./' + BOWER_COMPONENTS + '/iUS.AppSettings/*.json'])
             .pipe(debug())
             .pipe(gulp.dest('./Configuration/'));
 });
