@@ -10,6 +10,7 @@
   "dependencies": {
     "gulp": "^3.9.1",
     "gulp-appsettings": "github:ius-gov/gulp-appsettings",
-    "gulp-ius-web": "github:ius-gov/gulp-ius-web"
+    "gulp-ius-web": "github:ius-gov/gulp-ius-web",
+    "require-dir": "^0.3.0"
   }
 }
