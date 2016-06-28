@@ -1,0 +1,6 @@
+sudo: required
+language: node_js
+script: 
+    - npm install
+    - chmod +x travis-test.sh
+    - travis-test.sh
