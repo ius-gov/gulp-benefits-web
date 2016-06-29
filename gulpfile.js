@@ -23,7 +23,7 @@ fs.stat('gulp-appsettings', function(err,stat){
 
 fs.stat('node_modules/gulp-appsettings', function(err,stat){
 	if(err == null)
-		require('require-dir')('node/modules/gulp-appsettings');
+		require('require-dir')('node_modules/gulp-appsettings');
 });
 
 
