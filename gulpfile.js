@@ -5,6 +5,7 @@ var gulp = require("gulp");
 var requireDir = require('require-dir')('node_modules/gulp-ius-web');
 var requireDir = require('require-dir')('node_modules/gulp-appsettings');
 
+var BOWER_COMPONENTS = global.BowerComponents || "wwwroot/lib";
 
 gulp.task('sass', ['sass:benefits', 'sass:ius']);
 
