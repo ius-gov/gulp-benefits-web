@@ -1,6 +1,9 @@
 /// <binding />
 "use strict";
 var gulp = require("gulp");
+var sass = require('gulp-sass');
+var ts = require("gulp-typescript");
+var rename = require("gulp-rename");
 
 var requireDir = require('require-dir')('node_modules/gulp-ius-web');
 var requireDir = require('require-dir')('node_modules/gulp-appsettings');
