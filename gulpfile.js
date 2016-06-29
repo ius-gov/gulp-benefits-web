@@ -4,9 +4,29 @@ var gulp = require("gulp");
 var sass = require('gulp-sass');
 var ts = require("gulp-typescript");
 var rename = require("gulp-rename");
+var fs = require("fs");
 
-var requireDir = require('require-dir')('node_modules/gulp-ius-web');
-var requireDir = require('require-dir')('node_modules/gulp-appsettings');
+fs.stat('gulp-ius-web', function(err,stat){
+	if(err == null)
+		require('require-dir')('gulp-ius-web');
+});
+
+fs.stat('node_modules/gulp-ius-web', function(err,stat){
+	if(err == null)
+		require('require-dir')('node_modules/gulp-ius-web');
+});
+
+fs.stat('gulp-appsettings', function(err,stat){
+	if(err == null)
+		require('require-dir')('gulp-appsettings');
+});
+
+fs.stat('node_modules/gulp-appsettings', function(err,stat){
+	if(err == null)
+		require('require-dir')('node/modules/gulp-appsettings');
+});
+
+
 
 var BOWER_COMPONENTS = global.BowerComponents || "wwwroot/lib";
 
