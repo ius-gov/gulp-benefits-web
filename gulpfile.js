@@ -5,18 +5,21 @@ var sass = require('gulp-sass');
 var ts = require("gulp-typescript");
 var rename = require("gulp-rename");
 var fileExists = require('file-exists');
+var requireDir = require('require-dir');
 
+// This is the case it is being used in another gulp file
+// So we actually need to require from one level up
 if(fileExists("gulp-ius-web/gulpfile.js"))
-	require('require-dir')('gulp-ius-web');
+	requireDir('../gulp-ius-web');
 else if (fileExists("node_modules/gulp-ius-web/gulpfile.js"))
-	require('require-dir')('node_modules/gulp-ius-web');
+	requireDir('node_modules/gulp-ius-web');
 else
 	console.log("Error loading gulp-ius-web package");
 
 if(fileExists("gulp-appsettings/gulpfile.js"))
-	require('require-dir')('gulp-appsettings');
+	requireDir('../gulp-appsettings');
 else if(fileExists("node_modules/gulp-appsettings/gulpfile.js"))
-	require('require-dir')('node_modules/gulp-appsettings');
+	requireDir('node_modules/gulp-appsettings');
 else
 	console.log("Error loading gulp-appsettings package");	
 
