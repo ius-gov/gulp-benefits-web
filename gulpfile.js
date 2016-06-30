@@ -6,24 +6,13 @@ var ts = require("gulp-typescript");
 var rename = require("gulp-rename");
 var fileExists = require('file-exists');
 var requireDir = require('require-dir');
+var path = require('path');
 
-// This is the case it is being used in another gulp file
-// So we actually need to require from one level up
-if(fileExists("gulp-ius-web/gulpfile.js"))
-	requireDir('../gulp-ius-web');
-else if (fileExists("node_modules/gulp-ius-web/gulpfile.js"))
-	requireDir('node_modules/gulp-ius-web');
-else
-	console.log("Error loading gulp-ius-web package");
+var iusPath = path.join(process.cwd(), 'node_modules/gulp-ius-web');
+var ius = requireDir(iusPath);
 
-if(fileExists("gulp-appsettings/gulpfile.js"))
-	requireDir('../gulp-appsettings');
-else if(fileExists("node_modules/gulp-appsettings/gulpfile.js"))
-	requireDir('node_modules/gulp-appsettings');
-else
-	console.log("Error loading gulp-appsettings package");	
-
-
+var appSettingsPath = path.join(process.cwd(), 'node_modules/gulp-appsettings');
+var appSettings = requireDir(appSettingsPath);
 
 var BOWER_COMPONENTS = global.BowerComponents || "wwwroot/lib";
 
