@@ -4,7 +4,6 @@ var gulp = require("gulp");
 var sass = require('gulp-sass');
 var ts = require("gulp-typescript");
 var rename = require("gulp-rename");
-var fileExists = require('file-exists');
 var requireDir = require('require-dir');
 var path = require('path');
 
