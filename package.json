@@ -8,9 +8,9 @@
   "license": "Apache-2.0",
   "version": "1.0.4",
   "dependencies": {
-    "file-exists": "^1.0.0",
     "gulp": "^3.9.1",
     "gulp-appsettings": "github:ius-gov/gulp-appsettings",
+    "gulp-debug": "^2.1.2",
     "gulp-ius-web": "github:ius-gov/gulp-ius-web",
     "gulp-rename": "^1.2.2",
     "gulp-sass": "^2.3.2",
