@@ -18,8 +18,8 @@ echo 'Creating css folder'
 mkdir -p wwwroot/lib/Benefits.UX/css/
 
 echo "Writing css file"
-echo "body { color : 'red'; } " > wwwroot/lib/Benefits.UX/css/benefits.css
-echo "body { color : 'red'; } " > wwwroot/lib/Benefits.UX/css/benefits.min.css
+echo "body { color : 'red'; } " > wwwroot/lib/Benefits.UX/css/site.css
+echo "body { color : 'red'; } " > wwwroot/lib/Benefits.UX/css/site.min.css
 
 echo "Running Gulp Build"
 gulp build

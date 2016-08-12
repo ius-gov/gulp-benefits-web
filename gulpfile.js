@@ -1,4 +1,3 @@
-/// <binding />
 "use strict";
 var gulp = require("gulp");
 var sass = require('gulp-sass');
@@ -16,11 +15,13 @@ var appSettings = requireDir(appSettingsPath);
 
 var BOWER_COMPONENTS = global.BowerComponents || "wwwroot/lib";
 
-gulp.task('sass:benefits', function () {
-    return gulp.src('./' + BOWER_COMPONENTS + '/Benefits.UX/css/site.scss')
-        .pipe(sass())
+gulp.task("sass", ["sass:local-app", "concat:benefits-css"]);
+
+gulp.task("concat:benefits-css", function(){
+    return gulp.src(["./" + BOWER_COMPONENTS + "/Benefits.UX/css/site.css"])
+        .pipe(debug())
         .pipe(rename("benefits.css"))
-        .pipe(gulp.dest('./wwwroot/app/css'));
+        .pipe(gulp.dest("./wwwroot/css/"));
 });
 
 gulp.task('typescript', ['typescript:app']);
