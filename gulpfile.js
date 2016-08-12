@@ -1,4 +1,3 @@
-/// <binding />
 "use strict";
 var gulp = require("gulp");
 var sass = require('gulp-sass');
@@ -16,25 +15,16 @@ var appSettings = requireDir(appSettingsPath);
 
 var BOWER_COMPONENTS = global.BowerComponents || "wwwroot/lib";
 
-gulp.task('sass', ['sass:benefits', 'sass:ius']);
+gulp.task("sass", ["sass:local-app", "concat:benefits-css"]);
 
-gulp.task('sass:benefits', function () {
-    return gulp.src('./' + BOWER_COMPONENTS + '/Benefits.UX/css/site.scss')
-        .pipe(sass())
-        .pipe(rename("benefits.css"))
-        .pipe(gulp.dest('./wwwroot/app/css'));
-});
-
-gulp.task('typescript', ['typescript:ius', 'typescript:benefits', 'typescript:app']);
-
-gulp.task('typescript:benefits', function () {
-    return gulp.src(['./' + BOWER_COMPONENTS + '/Benefits.UX/js/**/*.ts'])
+gulp.task("concat:benefits-css", function(){
+    return gulp.src(["./" + BOWER_COMPONENTS + "/Benefits.UX/css/site.css"])
         .pipe(debug())
-        .pipe(ts({
-            noExternalResolve: false
-        }))
-        .pipe(gulp.dest('./wwwroot/app/Benefits.UX'));
+        .pipe(rename("benefits.css"))
+        .pipe(gulp.dest("./wwwroot/css/"));
 });
+
+gulp.task('typescript', ['typescript:app']);
 
 gulp.task('typescript:app', function() {
 	  return gulp.src(['./Scripts/**/*.ts'])

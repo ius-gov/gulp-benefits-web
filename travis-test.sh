@@ -15,11 +15,11 @@ echo "function hellowWorld() { alert('Hello World'); }" > wwwroot/lib/jquery/dis
 echo "function hellowWorld() { alert('Hello World'); }" > Scripts/App.ts
 
 echo 'Creating css folder'
-mkdir -p wwwroot/lib/pure/
+mkdir -p wwwroot/lib/Benefits.UX/css/
 
 echo "Writing css file"
-echo "body { color : 'red'; } " > wwwroot/lib/pure/pure.css
-echo "body { color : 'red'; } " > wwwroot/lib/pure/pure.min.css
+echo "body { color : 'red'; } " > wwwroot/lib/Benefits.UX/css/site.css
+echo "body { color : 'red'; } " > wwwroot/lib/Benefits.UX/css/site.min.css
 
 echo "Running Gulp Build"
 gulp build
