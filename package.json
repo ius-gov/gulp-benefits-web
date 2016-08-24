@@ -6,11 +6,10 @@
     "url": "git://github.com/ius-gov/gulp-benefits-web.git"
   },
   "license": "Apache-2.0",
-  "version": "2.1.0",
+  "version": "2.2.0",
   "dependencies": {
     "gulp": "^3.9.1",
-    "gulp-appsettings": "github:ius-gov/gulp-appsettings#1.0.2",
-    "gulp-contrib-copy": "^0.1.2",
+    "gulp-appsettings": "github:ius-gov/gulp-appsettings#1.0.3",
     "gulp-debug": "^2.1.2",
     "gulp-ius-web": "github:ius-gov/gulp-ius-web#2.1.0",
     "gulp-rename": "^1.2.2",
