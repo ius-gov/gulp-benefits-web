@@ -6,7 +6,6 @@ var rename = require("gulp-rename");
 var requireDir = require('require-dir');
 var path = require('path');
 var debug = require('gulp-debug');
-var copy = require('gulp-contrib-copy');
 
 var iusPath = path.join(process.cwd(), 'node_modules/gulp-ius-web');
 var ius = requireDir(iusPath);
@@ -18,14 +17,13 @@ var BOWER_COMPONENTS = global.BowerComponents || "wwwroot/lib";
 
 gulp.task("sass", ["sass:local-app", "concat:benefits-css"]);
 
-gulp.task("concat", ["concat:js", "concat:css","copy:ius-js", "copy:benefits-js"]);
+gulp.task("concat", ["concat:js", "concat:css","copy:benefits-js"]);
 
 gulp.task("copy:benefits-js", function () {
     return gulp.src([
             "./" + BOWER_COMPONENTS + "/Benefits.UX/scripts/dist/*.js"
     ])
     .pipe(debug())
-    .pipe(copy())
         .pipe(gulp.dest("./wwwroot/app/Benefits.UX/"));
 });
 
