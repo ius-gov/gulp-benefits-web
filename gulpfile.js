@@ -7,10 +7,10 @@ var requireDir = require('require-dir');
 var path = require('path');
 var debug = require('gulp-debug');
 
-var iusPath = path.join(process.cwd(), 'node_modules/gulp-ius-web');
+var iusPath = path.join(process.cwd(), 'node_modules/gulp-benefits-web/node_modules/gulp-ius-web');
 var ius = requireDir(iusPath);
 
-var appSettingsPath = path.join(process.cwd(), 'node_modules/gulp-appsettings');
+var appSettingsPath = path.join(process.cwd(), 'node_modules/gulp-benefits-web/node_modules/gulp-appsettings');
 var appSettings = requireDir(appSettingsPath);
 
 var BOWER_COMPONENTS = global.BowerComponents || "wwwroot/lib";
