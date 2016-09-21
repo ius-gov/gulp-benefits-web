@@ -25,9 +25,9 @@ echo "Running Gulp Build"
 gulp build
 
 echo "asserting javascript files were created"
-if [ ! -f 'wwwroot/js/site.js' ]; then 
-	echo "Site.js not created" 
-	exit 1 
+if [ ! -f 'wwwroot/js/site.js' ]; then
+	echo "Site.js not created"
+	exit 1
 fi
 
 echo "asserting typescript files were created"
@@ -37,7 +37,7 @@ if [ ! -f 'wwwroot/js/Scripts/App.js' ]; then
 fi
 
 echo "asserting css files were created"
-if [ ! -f 'wwwroot/css/site.css' ]; then 
-	echo "Site.css not created" 
-	exit 1 
+if [ ! -f 'wwwroot/css/site.css' ]; then
+	echo "Site.css not created"
+	exit 1
 fi
